@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>LimpezaGeral</Name>
+    <Assembly>.\LimpezaGeral\LimpezaGeral.dll</Assembly>
+    <AddInId>7d3f2a4e-5b1c-4c8e-9a62-3f0e8b14d7a5</AddInId>
+    <FullClassName>BimBlaster.LimpezaGeral.LimpezaGeralApplication</FullClassName>
+    <VendorId>BIMBLASTER</VendorId>
+    <VendorDescription>BIMBLASTER, www.bimblaster.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

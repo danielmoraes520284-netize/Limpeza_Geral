@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RevitYear Condition="'$(RevitYear)' == ''">2025</RevitYear>
+    <TargetFramework Condition="'$(RevitYear)' &lt; '2025'">net48</TargetFramework>
+    <TargetFramework Condition="'$(RevitYear)' &gt;= '2025'">net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Company>BIMBLASTER</Company>
+    <Authors>BIMBLASTER</Authors>
+    <Product>LimpezaGeral</Product>
+    <RootNamespace>BimBlaster.LimpezaGeral</RootNamespace>
+    <AssemblyName>LimpezaGeral</AssemblyName>
+    <BaseOutputPath>bin\$(RevitYear)\</BaseOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DefineConstants>$(DefineConstants);REVIT$(RevitYear)</DefineConstants>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="**\*.cs" Exclude="bin\**;obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="$(RevitYear).*" />
+    <PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="$(RevitYear).*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Assets\BimBlasterStyles.xaml" />
+    <None Include="Assets\BimBlasterStyles.xaml" Link="BimBlasterStyles.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\icon16.png" Link="icon16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\icon32.png" Link="icon32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

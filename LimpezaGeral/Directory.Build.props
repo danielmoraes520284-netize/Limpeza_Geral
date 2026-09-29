@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <RevitYear Condition="'$(RevitYear)' == ''">2025</RevitYear>
+    <BaseIntermediateOutputPath>obj\$(RevitYear)\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+</Project>
