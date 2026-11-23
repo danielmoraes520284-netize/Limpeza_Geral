@@ -1,4 +1,4 @@
-# Compila o plugin para Revit 2024, 2025 e 2026 e monta dist\{ano}\ no layout de instalação:
+# Compila o plugin para Revit 2022, 2024, 2025 e 2026 e monta dist\{ano}\ no layout de instalação:
 #   dist\{ano}\LimpezaGeral.addin
 #   dist\{ano}\LimpezaGeral\{dll, pdb, BimBlasterStyles.xaml, icon16.png, icon32.png}
 $ErrorActionPreference = 'Stop'
@@ -8,7 +8,7 @@ $dist = Join-Path $root 'dist'
 
 if (Test-Path $dist) { Remove-Item $dist -Recurse -Force }
 
-foreach ($year in 2024, 2025, 2026) {
+foreach ($year in 2022, 2024, 2025, 2026) {
     dotnet build $proj -c Release -p:RevitYear=$year
     if ($LASTEXITCODE -ne 0) { throw "Build falhou para Revit $year" }
 
